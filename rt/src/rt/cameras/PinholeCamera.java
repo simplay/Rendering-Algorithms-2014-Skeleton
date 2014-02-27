@@ -93,15 +93,14 @@ public class PinholeCamera implements Camera {
 	@Override
 	public Ray makeWorldSpaceRay(int i, int j, float[] sample) {
 		
-		float u_ij = l + (r-l)*(i+sample[0])*width;
-		float v_ij = b + (t-b)*(j+sample[1])*height;
+		float u_ij = l + (r-l)*(i+sample[0])/width;
+		float v_ij = b + (t-b)*(j+sample[1])/height;
 		float w_ij = -1f;
 		
-		Vector4f s_uvw = new Vector4f(u_ij, v_ij, w_ij, 1);
+		Vector4f s_uvw_minusZeros = new Vector4f(u_ij, v_ij, w_ij, 0f);
 		Vector4f dir4f = new Vector4f();
-		C.transform(s_uvw, dir4f);
+		C.transform(s_uvw_minusZeros, dir4f);
 		Vector3f dir3f = new Vector3f(dir4f.x, dir4f.y, dir4f.z);
-
 		return new Ray(new Vector3f(eye), dir3f);
 	}
 }

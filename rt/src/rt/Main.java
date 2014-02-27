@@ -3,6 +3,8 @@ package rt;
 import javax.imageio.ImageIO;
 
 import rt.basicscenes.*;
+import rt.testscenes.CameraTest;
+
 import java.util.*;
 import java.awt.image.*;
 import java.io.*;
@@ -17,8 +19,9 @@ public class Main {
 	/** 
 	 * The scene to be rendered.
 	 */
-	public static Scene scene = new Dodecahedron();
-
+//	public static Scene scene = new Dodecahedron();
+	public static Scene scene = new CameraTest();
+	
 	static LinkedList<RenderTask> queue;
 	static Counter tasksLeft;
 		
