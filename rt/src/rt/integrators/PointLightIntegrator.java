@@ -9,6 +9,7 @@ import rt.Integrator;
 import rt.Intersectable;
 import rt.LightList;
 import rt.LightGeometry;
+import rt.Material;
 import rt.Ray;
 import rt.Sampler;
 import rt.Scene;
@@ -40,7 +41,7 @@ public class PointLightIntegrator implements Integrator {
 		if(hitRecord != null)
 		{
 			Spectrum outgoing = new Spectrum(0.f, 0.f, 0.f);
-			Spectrum brdfValue;
+			Spectrum brdfValue = null;
 			
 			// Iterate over all light sources
 			Iterator<LightGeometry> it = lightList.iterator();

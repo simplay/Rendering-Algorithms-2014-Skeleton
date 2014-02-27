@@ -19,7 +19,7 @@ public class Blinn extends Scene {
 	public Blinn()
 	{
 		// Output file name
-		outputFilename = new String("../output/testscenes/Blinn");
+		outputFilename = new String("../output/testscenes/BlinnFoo");
 		
 		// Image width and height in pixels
 		width = 512;
@@ -47,7 +47,7 @@ public class Blinn extends Scene {
 		
 		// Sphere with Blinn material
 		Sphere sphere = new Sphere();
-		sphere.material = new rt.materials.Blinn(new Spectrum(.8f, 0.f, 0.f), new Spectrum(.4f, .4f, .4f), 50.f);
+//		sphere.material = new rt.materials.Blinn(new Spectrum(.8f, 0.f, 0.f), new Spectrum(.4f, .4f, .4f), 50.f);
 		
 		IntersectableList intersectableList = new IntersectableList();
 		intersectableList.add(groundPlane);
